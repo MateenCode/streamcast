@@ -1,0 +1,65 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* 
+
+  The larger ones always goes before the smaller ones 
+  because if there was width of 700px both media queries
+  tab-land & tab-port will apply because 700px is less
+  then 1200 & 900.
+
+  Since both of the media queries get applied and have 
+  conflicting font-size then last one will get applied 
+  which in our situation is tab-port
+
+  So what the code below is saying is if the viewport 
+  is less then 1200px then make the font-size 56.25%
+  but then if the viewport is less then 900px then 
+  make the font-size 50% but if we where at viewport 
+  which was both less then 900px and 1200px for example
+  700px then the last declartion applied query will apply
+  which in the code below is tab-port 
+
+*/
+
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  /* 
+   This order we are saying we want the font-size: 56.25%;
+   will only be applied from 900px - 1200px 
+  */
+
+  @include respond(tab-land) {
+    // if viewport less then < 1200px?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // if viewport less then < 900px?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
