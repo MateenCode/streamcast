@@ -7,7 +7,7 @@ import {
   StreamList,
   StreamShow
 } from "containers";
-import { Header } from "components";
+import { Header } from "components/sections";
 
 class App extends PureComponent {
   render() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { GoogleAuth } from "components";
+import GoogleAuth from "./GoogleAuth";
 
 function Header() {
   return (
