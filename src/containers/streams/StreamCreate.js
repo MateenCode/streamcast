@@ -2,11 +2,12 @@ import React, { PureComponent } from "react";
 import { Field, reduxForm } from "redux-form";
 
 export class StreamCreate extends PureComponent {
-  renderInput({ input, label }) {
+  renderInput({ input, label, meta }) {
     return (
       <div className='field'>
         <label>{label}</label>
         <input {...input} />
+        <div>{meta.error}</div>
       </div>
     );
   }
@@ -48,5 +49,6 @@ const validate = formValues => {
 };
 
 export default reduxForm({
-  form: "streamCreate"
+  form: "streamCreate",
+  validate
 })(StreamCreate);
