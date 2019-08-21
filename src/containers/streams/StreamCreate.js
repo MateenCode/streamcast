@@ -1,7 +1,21 @@
-import React from "react";
+import React, { PureComponent } from "react";
+import { Field, reduxForm } from "redux-form";
 
-function StreamCreate() {
-  return <div>StreamCreate</div>;
+export class StreamCreate extends PureComponent {
+  renderInput({ input }) {
+    return <input {...input} />;
+  }
+
+  render() {
+    return (
+      <form>
+        <Field name='title' component={this.renderInput} />
+        <Field name='description' component={this.renderInput} />
+      </form>
+    );
+  }
 }
 
-export default StreamCreate;
+export default reduxForm({
+  form: "streamCreate"
+})(StreamCreate);
