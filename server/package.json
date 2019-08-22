@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for streaming",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server -p 5000 -w db.json"
+  },
+  "author": "Mateen Kazia",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  }
+}
