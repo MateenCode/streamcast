@@ -1,4 +1,4 @@
-import streams from "../apis/streams";
+import streams from "../configs/streams";
 import { SIGN_IN, SIGN_OUT } from "../configs/types";
 
 export const signIn = userId => {
