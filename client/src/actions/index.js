@@ -5,10 +5,9 @@ import {
   CREATE_STREAM,
   FETCH_STREAMS,
   FETCH_STREAM,
-  DELETE_STREAMS,
+  DELETE_STREAM,
   EDIT_STREAM
 } from "../configs/types";
-import { async } from "q";
 
 export const signIn = userId => {
   return {
@@ -46,6 +45,7 @@ export const editStream = (id, formValues) => async dispatch => {
   dispatch({ type: EDIT_STREAM, payload: response.data });
 };
 
+// delete has no response
 export const deleteStream = id => async dispatch => {
   await streams.delete(`/streams/${id}`);
   dispatch({ type: DELETE_STREAM, payload: id });

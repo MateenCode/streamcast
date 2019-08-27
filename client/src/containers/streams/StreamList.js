@@ -1,7 +1,19 @@
-import React from "react";
+import React, { PureComponent } from "react";
 
-function StreamList() {
-  return <div>StreamList</div>;
+import { connect } from "react-redux";
+import { fetchStreams } from "../../actions";
+
+export class StreamList extends PureComponent {
+  componentDidMount() {
+    this.props.fetchStreams();
+  }
+
+  render() {
+    return <div>steams</div>;
+  }
 }
 
-export default StreamList;
+export default connect(
+  null,
+  { fetchStreams }
+)(StreamList);
