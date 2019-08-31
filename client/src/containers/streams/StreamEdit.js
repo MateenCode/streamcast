@@ -9,7 +9,7 @@ export class StreamEdit extends PureComponent {
   }
 
   onSubmit = formValues => {
-    console.log(formValues);
+    this.props.editStream(this.props.match.params.id, formValues);
   };
 
   render() {
