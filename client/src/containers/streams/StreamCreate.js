@@ -10,10 +10,10 @@ export class StreamCreate extends PureComponent {
 
   render() {
     return (
-      <div>
+      <>
         <h3>Create a Stream</h3>
         <StreamForm onSubmit={this.onSubmit} />
-      </div>
+      </>
     );
   }
 }
