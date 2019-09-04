@@ -1,27 +1,3 @@
 {
-  "streams": [
-    {
-      "title": "Dance Stream",
-      "description": "Watch me dance ",
-      "userId": "105891951478808912488",
-      "id": 1
-    },
-    {
-      "description": "Watch asian thot play video games",
-      "title": "asian thot HOT!",
-      "userId": "105891951478808912488",
-      "id": 2
-    },
-    {
-      "title": "Dance Dance!",
-      "description": "Dancing to dance dance revolution !!EXTREME",
-      "id": 3
-    },
-    {
-      "title": "Play MineCraft EPIC",
-      "description": "Playing EPIC minecraft",
-      "userId": null,
-      "id": 5
-    }
-  ]
+  "streams": []
 }

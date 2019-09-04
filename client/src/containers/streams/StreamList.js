@@ -54,6 +54,7 @@ export class StreamList extends PureComponent {
   }
 
   render() {
+    console.log(this);
     return (
       <>
         <h2>Streams</h2>
