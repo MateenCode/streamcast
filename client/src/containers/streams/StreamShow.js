@@ -1,10 +1,26 @@
 import React, { PureComponent } from "react";
+import flv from "flv.js";
 import { connect } from "react-redux";
 import { fetchStream } from "../../actions";
 
 export class StreamShow extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.videoRef = React.createRef();
+  }
+
   componentDidMount() {
-    this.props.fetchStream(this.props.match.params.id);
+    const { id } = this.props.match.params;
+
+    this.props.fetchStream(id);
+
+    // setting up stream
+    this.player = flv.createPlayer({
+      type: "flv",
+      url: `http://localhost:8000/live/${id}`
+    });
+    this.player.attachMediaElement(this.videoRef.current);
+    this.player.load();
   }
 
   render() {
@@ -16,6 +32,7 @@ export class StreamShow extends PureComponent {
 
     return (
       <div>
+        <video ref={this.videoRef} style={{ width: "100%" }} controls />
         <h1>{title}</h1>
         <h5>{description}</h5>
       </div>
